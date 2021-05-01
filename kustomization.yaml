@@ -1,6 +1,5 @@
 resources:
   - namespace.yaml
-  - wp-resource-quota-mem-cpu.yaml
   - secret-mysql-password.yaml
 bases:
   - ./apps/mysql
