@@ -23,11 +23,11 @@ spec:
           name: mysql
           resources:
             limits:
+              memory: "3Gi"
+              cpu: "3"
+            requests:
               memory: "2Gi"
               cpu: "2"
-            requests:
-              memory: "1Gi"
-              cpu: "1"
           env:
             - name: MYSQL_ROOT_PASSWORD
               valueFrom:
