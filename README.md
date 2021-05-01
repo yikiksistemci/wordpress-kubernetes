@@ -1,1 +1,1 @@
-# wordpress_kuberentes
+# wordpress_kubernetes
