@@ -1,0 +1,7 @@
+resources:
+  - pv-wordpress.yaml
+  - pvc-wordpress.yaml
+  - deployment-wordpress.yaml
+  - service-wordpress.yaml
+  - ingress-wordpress.yaml
+
