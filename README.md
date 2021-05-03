@@ -126,3 +126,38 @@ networking.k8s.io  Ingress                wordpress  wordpress-ingress  Synced  
 
 
 ```
+
+- get app details
+
+```bash
+$ argocd app get wordpress
+Name:               wordpress
+Project:            default
+Server:             https://kubernetes.default.svc
+Namespace:          default
+URL:                https://192.168.1.22:30649/applications/wordpress
+Repo:               https://github.com/yikiksistemci/wordpress-kubernetes
+Target:             
+Path:               .
+SyncWindow:         Sync Allowed
+Sync Policy:        <none>
+Sync Status:        Synced to  (2f601a3)
+Health Status:      Healthy
+
+GROUP              KIND                   NAMESPACE  NAME               STATUS   HEALTH   HOOK  MESSAGE
+                   Namespace              default    wordpress          Running  Synced         namespace/wordpress created
+                   Secret                 wordpress  mysql-pass         Synced                  secret/mysql-pass created
+                   PersistentVolume       default    wordpress-pv       Running  Synced         persistentvolume/wordpress-pv created
+                   PersistentVolume       default    mysql-pv           Running  Synced         persistentvolume/mysql-pv created
+                   PersistentVolumeClaim  wordpress  mysql-pv-claim     Synced   Healthy        persistentvolumeclaim/mysql-pv-claim created
+                   PersistentVolumeClaim  wordpress  wp-pv-claim        Synced   Healthy        persistentvolumeclaim/wp-pv-claim created
+                   Service                wordpress  wordpress-mysql    Synced   Healthy        service/wordpress-mysql created
+                   Service                wordpress  wordpress          Synced   Healthy        service/wordpress created
+apps               Deployment             wordpress  wordpress-mysql    Synced   Healthy        deployment.apps/wordpress-mysql created
+apps               Deployment             wordpress  wordpress          Synced   Healthy        deployment.apps/wordpress created
+networking.k8s.io  Ingress                wordpress  wordpress-ingress  Synced   Healthy        ingress.networking.k8s.io/wordpress-ingress created
+                   Namespace                         wordpress          Synced                  
+                   PersistentVolume                  mysql-pv           Synced                  
+                   PersistentVolume                  wordpress-pv       Synced 
+
+```
