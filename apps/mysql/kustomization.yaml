@@ -2,3 +2,7 @@ resources:
   - pvc-mysql.yaml
   - deployment-mysql.yaml
   - service-mysql.yaml
+
+secretGenerator: 
+  literals:
+    - password: MySQLRootPasswor@OzgurYazilimKisKampi2024
