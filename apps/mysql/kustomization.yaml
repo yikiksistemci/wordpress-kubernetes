@@ -1,5 +1,4 @@
 resources:
-  - pv-mysql.yaml
   - pvc-mysql.yaml
   - deployment-mysql.yaml
   - service-mysql.yaml
