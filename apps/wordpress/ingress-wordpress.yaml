@@ -5,7 +5,7 @@ metadata:
   namespace: wordpress
 spec:
   rules:
-  - host: wordpress.localmahine
+  - host: wordpress.miniminipenguenler.com
     http:
       paths:
         - backend:
