@@ -7,3 +7,6 @@ secretGenerator:
 - name: mysql-pass
   envs:
   - .env.secret
+  
+generatorOptions:
+ disableNameSuffixHash: true
