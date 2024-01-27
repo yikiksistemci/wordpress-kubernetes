@@ -3,6 +3,7 @@ resources:
   - deployment-mysql.yaml
   - service-mysql.yaml
 
-secretGenerator: 
-  literals:
-    - password: MySQLRootPasswor@OzgurYazilimKisKampi2024
+secretGenerator:
+- name: mysql-pass
+  envs:
+  - .env.secret
