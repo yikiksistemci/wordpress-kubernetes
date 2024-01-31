@@ -2,6 +2,7 @@ resources:
   - pvc-mysql.yaml
   - deployment-mysql.yaml
   - service-mysql.yaml
+namespace: wordpress
 
 secretGenerator:
 - name: mysql-pass

@@ -1,0 +1,22 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: gitops-cron
+  namespace: wordpress
+spec:
+  schedule: "*/5 * * * *"                            #A
+  concurrencyPolicy: Forbid                          #B
+  jobTemplate:                                       #D
+    spec:
+      backoffLimit: 0                                #C
+      template:
+        spec:
+          restartPolicy: Never                       #E
+          serviceAccountName: gitops-serviceaccount  #F
+          containers:
+          - name: gitops-operator
+            image: gitopsbook/example-operator:v1.0  #G
+            command: [sh, -e, -c]                    #H
+            args:
+            - git clone https://github.com/yikiksistemci/wordpress-kubernetes.git /tmp/wordpress-kubernetes && cd /tmp/wordpress-kubernetes &&  
+              kustomize build . |kubectl apply -f -;

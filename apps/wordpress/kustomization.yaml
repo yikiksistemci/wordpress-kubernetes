@@ -4,3 +4,4 @@ resources:
   - service-wordpress.yaml
   - ingress-wordpress.yaml
 
+namespace: wordpress
